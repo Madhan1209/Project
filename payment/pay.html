@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Our Family</title>
+    <style>
+/* Basic Styles */
+body {
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.container {
+    text-align: center;
+}
+
+/* Main message box */
+.message-box {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Thank you heading with animation */
+.thank-you-heading {
+    font-size: 2.5rem;
+    color: #28a745;
+    animation: slideIn 1s ease-out;
+}
+
+/* Thank you text with animation */
+.thank-you-text {
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 15px;
+    animation: fadeInText 1.5s ease-in-out;
+}
+
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation for slide-in effect for heading */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animation for fade-in text */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Balloon animations */
+.celebration {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+}
+
+/* Balloon styling */
+.balloon {
+    width: 40px;
+    height: 60px;
+    background-color: #ff6347;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -60px; /* Start below the container */
+    animation: balloonFly 5s ease-in-out infinite, balloonSpin 4s linear infinite;
+}
+
+/* Balloon variations for different starting positions and delays */
+.balloon1 {
+    left: 10%;
+    animation-delay: 0s, 0.5s; /* Different delay for flight */
+}
+
+.balloon2 {
+    left: 50%;
+    animation-delay: 0.5s, 1s;
+}
+
+.balloon3 {
+    right: 10%;
+    animation-delay: 1s, 1.5s;
+}
+
+/* Balloon flight animation (moving up and across) */
+@keyframes balloonFly {
+    0% {
+        transform: translateX(0) translateY(0); /* Start at the bottom */
+    }
+    25% {
+        transform: translateX(-50px) translateY(-150px); /* Move up and to the left */
+    }
+    50% {
+        transform: translateX(50px) translateY(-300px); /* Move up and to the right */
+    }
+    75% {
+        transform: translateX(-30px) translateY(-450px); /* Move left and higher */
+    }
+    100% {
+        transform: translateX(0) translateY(-600px); /* Finish at top */
+    }
+}
+
+/* Balloon spinning effect */
+@keyframes balloonSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg); /* Full rotation */
+    }
+}
+
+/* Back to home button */
+.back-button {
+    margin-top: 40px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="message-box">
+            <h1 class="thank-you-heading">Thank You for Joining Our Family!</h1>
+            <p class="thank-you-text">We're so happy to have you with us. Enjoy the journey and the wonderful things ahead!</p>
+            <div class="celebration">
+                <div class="balloon balloon1"></div>
+                <div class="balloon balloon2"></div>
+                <div class="balloon balloon3"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional: You can add a button to go back or visit the homepage -->
+    <div class="back-button">
+        <a href="index.html" class="btn btn-primary">Go Back to Home</a>
+    </div>
+
+</body>
+</html>

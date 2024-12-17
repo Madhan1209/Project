@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        /* Basic reset for styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Main profile container */
+.profile-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 250px;
+    background-color: #2d2d2d;
+    color: #fff;
+    padding: 20px;
+}
+
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.username {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.email {
+    font-size: 1rem;
+    color: #ddd;
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-nav li {
+    margin: 15px 0;
+}
+
+.sidebar-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.sidebar-nav a:hover {
+    color: #007bff;
+}
+
+/* Profile content section */
+.profile-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff;
+}
+
+/* Section Styling */
+.section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+/* Button styling */
+.btn-edit, .btn-view, .btn-add-to-cart {
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-edit:hover, .btn-view:hover, .btn-add-to-cart:hover {
+    background-color: #0056b3;
+}
+
+/* Order History */
+.order-history {
+    margin-top: 20px;
+}
+
+.order-item {
+    background-color: #f7f7f7;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.order-item:hover {
+    transform: translateX(10px);
+}
+
+.btn-view {
+    background-color: #28a745;
+}
+
+/* Wishlist styling */
+.wishlist-item {
+    background-color: #f7f7f7;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.wishlist-item button {
+    background-color: #ffc107;
+    color: #fff;
+}
+
+.wishlist-item button:hover {
+    background-color: #e0a800;
+}
+
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <!-- Sidebar Navigation -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h3 class="username">John Doe</h3>
+                <p class="email">johndoe@example.com</p>
+            </div>
+        </div>
+
+        <!-- Profile Content -->
+        <div class="profile-content">
+            <!-- Account Info Section -->
+            <section id="account" class="section">
+                <h2>Account Information</h2>
+                <p>Name: John Doe</p>
+                <p>Email: johndoe@example.com</p>
+                <button class="btn-edit">Edit Info</button>
+            </section>
+
+            <!-- Order History Section -->
+            <section id="orders" class="section">
+                <h2>Order History</h2>
+                <div class="order-history">
+                    <div class="order-item">
+                        <p>Order #12345</p>
+                        <p>Placed: 2023-10-15</p>
+                        <button class="btn-view">View Details</button>
+                    </div>
+                    <div class="order-item">
+                        <p>Order #12346</p>
+                        <p>Placed: 2023-11-20</p>
+                        <button class="btn-view">View Details</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Wishlist Section -->
+            <section id="wishlist" class="section">
+                <h2>Wishlist</h2>
+                <div class="wishlist-item">
+                    <p>Product Name - Price: $99.99</p>
+                    <button class="btn-add-to-cart">Add to Cart</button>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings" class="section">
+                <h2>Settings</h2>
+                <button class="btn-edit">Change Password</button>
+                <button class="btn-edit">Log Out</button>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

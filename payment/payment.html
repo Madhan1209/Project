@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Options</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container my-5">
+        <div class="payment-options shadow rounded p-4 bg-white">
+            <h4 class="mb-3"><i class="fa fa-credit-card"></i> PAYMENT OPTIONS</h4>
+            <div class="timer alert alert-warning text-center mb-4">
+                Complete payment in <span id="timer" class="fw-bold text-danger">00 : 15 : 00</span>
+            </div>
+
+            <div class="accordion" id="paymentAccordion">
+                <!-- UPI -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingUPI">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseUPI" aria-expanded="true" aria-controls="collapseUPI">
+                            <i class="fa fa-qrcode me-2"></i> UPI
+                        </button>
+                    </h2>
+                    <div id="collapseUPI" class="accordion-collapse collapse show" aria-labelledby="headingUPI" data-bs-parent="#paymentAccordion">
+                        <div class="accordion-body">
+                            <label for="upi-id">Enter UPI ID:</label>
+                            <input type="text" id="upi-id" class="form-control mb-2" placeholder="example@upi">
+                            <button id="verify-upi" class="btn btn-primary">Verify</button>
+                        </div>
+                    </div>
+                </div>
+<!-- Wallets -->
+<div class="accordion-item">
+    <h2 class="accordion-header" id="headingWallets">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWallets" aria-expanded="false" aria-controls="collapseWallets">
+            <i class="fa fa-wallet me-2"></i> Wallets
+        </button>
+    </h2>
+    <div id="collapseWallets" class="accordion-collapse collapse" aria-labelledby="headingWallets" data-bs-parent="#paymentAccordion">
+        <div class="accordion-body bg-primary text-white">
+            <p><a href="https://www.amazon.in" class="text-white">
+                <img src="amazon-logo.png" alt="Amazon Pay Logo" class="wallet-logo me-2">Amazon Pay</a>
+            </p>
+            <p><a href="https://www.phonepe.com" class="text-white">
+                <img src="phonepe-logo.png" alt="PhonePe Logo" class="wallet-logo me-2">PhonePe</a>
+            </p>
+            <p><a href="https://pay.google.com" class="text-white">
+                <img src="googlepay-logo.png" alt="Google Pay Logo" class="wallet-logo me-2">Google Pay</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+                <!-- Credit/Debit Cards -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingCards">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCards" aria-expanded="false" aria-controls="collapseCards">
+                            <i class="fa fa-credit-card me-2"></i> Credit / Debit / ATM Card
+                        </button>
+                    </h2>
+                    <div id="collapseCards" class="accordion-collapse collapse" aria-labelledby="headingCards" data-bs-parent="#paymentAccordion">
+                        <div class="accordion-body">
+                            <label for="card-number">Card Number:</label>
+                            <input type="text" id="card-number" class="form-control mb-2" placeholder="XXXX-XXXX-XXXX-XXXX">
+                            <label for="expiry-date">Expiry Date:</label>
+                            <input type="month" id="expiry-date" class="form-control mb-2">
+                            <label for="cvv">CVV:</label>
+                            <input type="password" id="cvv" class="form-control mb-2" placeholder="***">
+                            <button id="verify-card" class="btn btn-primary">Verify</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Net Banking -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingNetBanking">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNetBanking" aria-expanded="false" aria-controls="collapseNetBanking">
+                            <i class="fa fa-university me-2"></i> Net Banking
+                        </button>
+                    </h2>
+                    <div id="collapseNetBanking" class="accordion-collapse collapse" aria-labelledby="headingNetBanking" data-bs-parent="#paymentAccordion">
+                        <div class="accordion-body">
+                            <p><a href="https://www.kotak.com">Kotak Bank</a></p>
+                            <p><a href="https://www.kvb.co.in">KVB Dlite</a></p>
+                            <p><a href="https://www.hdfcbank.com">HDFC Bank</a></p>
+                            <p><a href="https://www.onlinesbi.sbi">YONO SBI</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EMI -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingEMI">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEMI" aria-expanded="false" aria-controls="collapseEMI">
+                            <i class="fa fa-calendar-alt me-2"></i> EMI (Easy Installments)
+                        </button>
+                    </h2>
+                    <div id="collapseEMI" class="accordion-collapse collapse" aria-labelledby="headingEMI" data-bs-parent="#paymentAccordion">
+                        <div class="accordion-body text-warning">
+                            Coming soon as per RBI guidelines.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cash on Delivery -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingCOD">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCOD" aria-expanded="false" aria-controls="collapseCOD">
+                            <i class="fa fa-truck me-2"></i> Cash on Delivery
+                        </button>
+                    </h2>
+                    <div id="collapseCOD" class="accordion-collapse collapse" aria-labelledby="headingCOD" data-bs-parent="#paymentAccordion">
+                        <div class="accordion-body">
+                            <label for="address">Enter Address:</label>
+                            <textarea id="address" class="form-control mb-2" rows="3"></textarea>
+                            <p><strong>Note:</strong> An additional charge of ₹50 will be applied.</p>
+                            <a href="pay.html" id="pay-cod" class="btn btn-success">Pay</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>

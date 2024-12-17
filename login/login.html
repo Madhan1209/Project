@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('image1.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .signup-link,
+        .forgot-password {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .signup-link a,
+        .forgot-password a {
+            text-decoration: none;
+            color: #4CAF50;
+        }
+
+        .signup-link a:hover,
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        .profile-image { 
+            width: 150px; 
+            height: 150px;
+            border-radius: 50%; 
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+
+        .back-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #f44336; /* Red color for the back button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .back-btn:hover {
+            background-color: #e53935;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Login</h2>
+        <img src="login-image.png" alt="Profile Picture" class="profile-image">
+        <form id="loginForm" action="#" method="POST" onsubmit="return validateForm()">
+            <input type="text" id="username" name="username" placeholder="Username" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <div class="forgot-password">
+            <a href="C:\Users\Asus\OneDrive\Documents\Fron-end\login\forgot.html">Forgot Password?</a>
+        </div>
+        <div class="signup-link">
+            Don't have an account? <a href="C:\Users\Asus\OneDrive\Documents\Fron-end\sign-up\signin.html">Sign Up</a>
+        </div>
+        <div class="error-message"></div> <!-- Error message container -->
+        <button type="button" class="back-btn" onclick="window.location.href='index.html'">Back</button> <!-- Back button -->
+    </div>
+
+    <script>
+        // Function to validate the form before submission
+        function validateForm() {
+            // Get the values of the username and password fields
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Check if the username or password is empty
+            if (username === "" || password === "") {
+                alert("Username or password is empty, please fill in the details to continue login.");
+                return false; // Prevent form submission if validation fails
+            }
+
+            // Retrieve stored credentials from localStorage
+            const storedUsername = localStorage.getItem('username');
+            const storedPassword = localStorage.getItem('password');
+
+            // Check if the entered username and password match stored values
+            if (username === storedUsername && password === storedPassword) {
+                // Display a welcome message
+                alert("Welcome user");
+
+                // Redirect to index.html upon successful login
+                window.location.href = "index.html";  // This will redirect to the correct page
+                return false;  // Prevent form submission so the page doesn't reload
+            } else {
+                alert("Username or Password invalid");
+                return false; // Prevent form submission if login fails
+            }
+        }
+    </script>
+
+</body>
+</html>

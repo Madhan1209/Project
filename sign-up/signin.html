@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url(image2.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .signup-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #648DE5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #648DE5;
+        }
+
+        .login-link {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .login-link a {
+            text-decoration: none;
+            color: #4CAF50;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        .profile-image { 
+            width: 150px; 
+            height: 150px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+            display: block; 
+            margin: 0 auto; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="signup-container">
+        <h2>Sign Up</h2>
+        <img src="image.png" alt="Profile Picture" class="profile-image">
+        <form action="#" method="POST" onsubmit="handleRegister(event)">
+            <input type="text" name="fullname" placeholder="User Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <div class="login-link">
+            Already have an account? <a href="C:\Users\Asus\OneDrive\Documents\Fron-end\login\login.html">Login</a>
+        </div>
+    </div>
+    <script>
+        function handleRegister(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            const password = document.querySelector('#password').value;
+            const confirmPassword = document.querySelector('#confirm-password').value;
+
+            // Check if passwords match
+            if (password !== confirmPassword) {
+                alert('Passwords do not match. Please try again.');
+                return;
+            }
+
+            // Save user data to localStorage
+            localStorage.setItem('username', document.querySelector('input[name="fullname"]').value);
+            localStorage.setItem('email', document.querySelector('input[name="email"]').value);
+            localStorage.setItem('phone', document.querySelector('input[name="phone"]').value);
+            localStorage.setItem('password', password);
+
+            alert('Registration successful! You can now log in.');
+            window.location.href = "C:\\Users\\Asus\\OneDrive\\Documents\\Fron-end\\login\\login.html"; // Redirect to login page
+        }
+    </script>
+</body>
+</html>

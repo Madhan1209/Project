@@ -1,0 +1,94 @@
+body {
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+}
+
+.payment-options {
+    max-width: 600px;
+    margin: auto;
+}
+
+.accordion-button {
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease; /* Only smooth background color transition */
+}
+
+.accordion-button i {
+    color: #0d6efd;
+}
+
+/* Timer styling */
+.timer {
+    font-size: 1rem;
+    background-color: #fff3cd;
+}
+
+/* Custom styling for wallet logos */
+.wallet-logo {
+    width: 40px;
+    height: auto;
+    max-width: 100%;
+    opacity: 0; /* Initially invisible */
+    animation: fadeIn 0.5s forwards; /* Smooth fade-in animation */
+}
+
+/* Smooth hover effect on wallet logos */
+.wallet-logo:hover {
+    transform: scale(1.1); /* Slightly increase size on hover */
+}
+
+/* Animation for wallet logos fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px); /* Start slightly below */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* End at normal position */
+    }
+}
+
+/* Set background color to white for the wallets section */
+.accordion-body.bg-primary {
+    background-color: white !important;
+    color: #000;
+    text-align: center;
+}
+
+/* Center wallet logos and links inside the accordion section */
+.accordion-body a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+/* Smooth animation for accordion section opening */
+.accordion-collapse {
+    max-height: 0; /* Start with zero height */
+    opacity: 0; /* Start hidden */
+    overflow: hidden; /* Hide content */
+    transition: max-height 0.4s ease-out, opacity 0.4s ease-out; /* Smooth open/close transition */
+}
+
+/* When accordion is open, expand the height and show content */
+.accordion-collapse.show {
+    max-height: 1000px; /* A large enough value to ensure the content is fully expanded */
+    opacity: 1; /* Fade in */
+}
+
+/* Styling for active accordion item */
+.accordion-button:not(.collapsed) {
+    background-color: #f8f9fa !important;
+}
+
+/* Styling for accordion button hover */
+.accordion-button:hover {
+    background-color: #e7e7e7;
+}
+
+/* Optional: Styling for collapsed accordion sections */
+.accordion-collapse:not(.show) {
+    display: none; /* Hide content when not expanded */
+}
